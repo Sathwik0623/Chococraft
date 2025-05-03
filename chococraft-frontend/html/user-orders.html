@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChocoCraft - My Orders</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  
+  <style>
+    .user-orders {
+      padding: 2rem;
+    }
+    .user-orders-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .order-item {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .accepted-status {
+      color: green;
+      font-weight: bold;
+    }
+    .rejected-status {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="50">
+    </div>
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search Chocolates…" />
+    </div>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="favorites.html" style="color: #fff;">❤️ Favorites</a>
+      <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="login.html" id="logoutLink">Login/Signup</a>
+    </div>
+    <a href="#" class="back-btn" onclick="history.back(); return false;">Back</a>
+  </nav>
+
+  <header>
+    <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="80">
+    <h1>My Orders</h1>
+  </header>
+
+  <main>
+    <div class="user-orders">
+      <h2>Your Recent Orders</h2>
+      <div id="user-orders-list" class="user-orders-list"></div>
+    </div>
+  </main>
+
+  <footer>
+    <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="40">
+    <p>© 2025 ChocoCraft. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/user-orders.js"></script>
+  <script src="../js/nav.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+      const backBtn = document.querySelector('.back-btn');
+
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        backBtn.classList.remove('active');
+      });
+
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.history.length > 1) {
+            backBtn.classList.add('active');
+          }
+          menu.classList.remove('active');
+        });
+      });
+
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.history.length > 1) {
+          history.back();
+        } else {
+          menu.classList.remove('active');
+          backBtn.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

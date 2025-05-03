@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChocoCraft - Checkout</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script> <!-- Your Firestore config -->
+
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="ChocoCraft Logo" height="40">
+    </div>
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search Chocolates…" />
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="favorites.html" style="color: #fff;">❤️ Favorites</a>
+      <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="login.html" id="logoutLink">Login/Signup</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </nav>
+
+  <header>
+    <img src="logo.png" alt="ChocoCraft Logo">
+    <h1>Checkout</h1>
+  </header>
+
+  <main>
+    <div id="successMessage" class="success-message"></div>
+    <div class="login-required-message" id="loginRequiredMessage">
+      <p>Please login before checkout.</p>
+      <p><a href="login.html">Login Now</a></p>
+    </div>
+    <div class="message error" id="checkoutMessage">
+      <p id="checkoutMessageText"></p>
+    </div>
+    <div class="checkout">
+      <h2>Order Summary</h2>
+      <div id="order-summary" class="cart-items"></div>
+      <div class="cart-summary">
+        <p>Total: ₹<span id="cart-total">0.00</span></p>
+      </div>
+      <h2>Shipping Information</h2>
+      <form id="checkout-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required>
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+        <label for="zip">Zip Code</label>
+        <input type="text" id="zip" name="zip" required>
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method" name="payment-method" required>
+          <option value="credit-card">Credit Card</option>
+          <option value="debit-card">Debit Card</option>
+          <option value="upi">UPI</option>
+        </select>
+        <button type="submit" class="btn">Place Order</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <img src="logo.png" alt="ChocoCraft Logo" height="40">
+    <p>© 2025 ChocoCraft. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="checkout.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

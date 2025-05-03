@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - ChocoCraft</title>
+  <link href="../css/style.css" rel="stylesheet" />
+  
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="40" />
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search Chocolates…" />
+    </div>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="menu">
+      <a href="../html/index.html">Home</a>
+      <a href="../html/about.html">About</a>
+      <a href="../html/contact.html">Contact</a>
+      <a href="../html/favorites.html" style="color: #fff;">❤️ Favorites</a>
+      <a href="../html/cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="#" id="logoutLink">Login/Signup</a>
+      <!-- Removed Admin link -->
+    </div>
+    <a href="#" class="back-btn" onclick="history.back(); return false;">Back</a>
+  </nav>
+  <header>
+    <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="80" />
+    <h1>Login to ChocoCraft</h1>
+    <h2>Access Your Account</h2>
+  </header>
+
+  <main>
+    <div id="notification-message" class="notification-message"></div>
+    <div class="login-content">
+      <h3>Login</h3>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <div class="password-wrapper" style="position: relative;">
+          <input type="password" id="password" name="password" required />
+          <i id="toggle-password" class="fas fa-eye" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <div id="error-message" class="error-message"></div>
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="40" />
+    <p>© 2025 ChocoCraft. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <style>
+    .error-message {
+      color: red;
+      margin-top: 10px;
+      display: none;
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .error-message.success {
+      color: #155724;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+    }
+    .error-message.error {
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+    }
+    .password-wrapper input {
+      width: 100%;
+      padding-right: 35px;
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="../js/nav.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>
