@@ -1,0 +1,62 @@
+.message-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.message-icon {
+  cursor: pointer;
+  position: relative;
+}
+
+.unread-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.message-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.message-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.message-item.unread {
+  background-color: #f0f8ff;
+  font-weight: bold;
+}
+
+.message-item.read {
+  background-color: #f9f9f9;
+}
+
+.message-item p {
+  margin: 5px 0;
+}
+
+.message-item small {
+  display: block;
+  color: #666;
+}
+
+.error {
+  color: red;
+  padding: 10px;
+}

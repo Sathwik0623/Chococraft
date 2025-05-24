@@ -1,0 +1,223 @@
+/* Ensure the font is applied (already loaded via Google Fonts in the sample) */
+.font-segoe {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navigation styles */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure nav stays above other content */
+}
+
+.nav-bar .logo img {
+  height: 80px;
+}
+
+.nav-bar .search input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.nav-bar .hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.nav-bar .menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-bar .menu a {
+  text-decoration: none;
+  color: #333; /* Default color matching the sample */
+  font-weight: 500;
+}
+
+.nav-bar .menu a:hover {
+  color: #ff6f61; /* Hover color matching the sample */
+}
+
+.nav-bar .back-btn {
+  display: none;
+  text-decoration: none;
+  color: #ff6f61;
+  font-weight: 500;
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+  .nav-bar .hamburger {
+    display: block;
+  }
+
+  .nav-bar .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Ensure menu is below nav but above other content */
+  }
+
+  .nav-bar .menu.active {
+    display: flex;
+  }
+
+  .nav-bar .menu a {
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-bar .search {
+    display: none;
+  }
+
+  .nav-bar .back-btn {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .nav-bar .back-btn.active {
+    display: block;
+  }
+}
+
+/* Header styles */
+header {
+  position: relative;
+  z-index: 10; /* Ensure header is below nav */
+}
+
+/* Success Section */
+.success-section {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.success-section h2 {
+  color: #28a745; /* Green color for the success message */
+  font-size: 2rem;
+}
+
+.success-section p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.success-section .checkmark {
+  font-size: 3rem;
+  color: #28a745; /* Green checkmark */
+  margin-bottom: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.success-section .order-details {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.success-section .order-details p {
+  margin: 0.5rem 0;
+}
+
+.success-section .btn {
+  background-color: #ff6f61; /* Coral button color */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.success-section .btn:hover {
+  background-color: #e65b50; /* Darker coral on hover */
+}
+
+/* Footer styles */
+footer {
+  background-color: #472f2f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 10; /* Ensure footer is below nav */
+}
+
+footer img {
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+footer .socials {
+  margin-top: 0.5rem;
+}
+
+footer .socials a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+footer .socials a:hover {
+  color: #ff6f61;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .success-section {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .success-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .success-section p {
+    font-size: 1rem;
+  }
+
+  .success-section .checkmark {
+    font-size: 2.5rem;
+  }
+}

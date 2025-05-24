@@ -1,0 +1,337 @@
+/* Checkout-specific styles */
+.checkout-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  padding: 1rem; /* Reduced from 2rem to 1rem */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkout-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.form-section {
+  padding: 0.5rem 0;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: #64748b;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: #fafafa;
+  padding: 0 0.3rem;
+  font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 0.9rem;
+  color: #1e293b;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #532A02;
+  box-shadow: 0 0 0 3px rgba(83, 42, 2, 0.1);
+}
+
+.input-group input:not(:placeholder-shown) + label,
+.input-group input:focus + label,
+.input-group select:not(:placeholder-shown) + label,
+.input-group select:focus + label {
+  top: -0.6rem;
+  left: 0.75rem;
+  font-size: 0.8rem;
+  color: #532A02;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.checkbox-group input {
+  display: none;
+}
+
+.checkbox-group span {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.checkbox-group input:checked + span {
+  background: #532A02;
+  border-color: #532A02;
+}
+
+.checkbox-group input:checked + span svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox-group span svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: #ffffff;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.2s ease;
+}
+
+.checkbox-group label {
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+/* Payment Method Styling */
+.form-section .flex-col.space-y-4 label {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.form-section .flex-col.space-y-4 label:hover {
+  background: #f8fafc; /* Fixed typo from #f8favc */
+  border-color: #d1d5db;
+}
+
+.form-section .flex-col.space-y-4 input[type="radio"] {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.form-section .flex-col.space-y-4 input[type="radio"]:checked {
+  border-color: #532A02;
+  background: #532A02;
+  position: relative;
+}
+
+.form-section .flex-col.space-y-4 input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.form-section .flex-col.space-y-4 span {
+  font-size: 0.9rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.order-items {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+}
+
+.order-item-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  overflow: hidden; /* Fixed the invalid value #ephysics: hidden */
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.order-item-card:hover {
+  background: #f8fafc;
+  border-color: #d1d5db;
+}
+
+.order-item-card img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 1rem;
+}
+
+.discount-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.discount-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discount-form input:focus {
+  outline: none;
+  border-color: #532A02;
+  box-shadow: 0 0 0 3px rgba(83, 42, 2, 0.1);
+}
+
+.apply-discount-btn {
+  padding: 0.75rem 1.5rem;
+  background: #e2e8f0;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #1e293b;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.apply-discount-btn:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
+}
+
+.order-totals {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.order-totals div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.order-totals div span:first-child {
+  flex: 1;
+  text-align: left;
+}
+
+.order-totals div span:last-child {
+  flex: 1;
+  text-align: right;
+  padding-left: 1rem;
+}
+
+.order-totals .text-base {
+  font-size: 1rem;
+}
+
+.place-order-btn {
+  background: #532A02;
+  color: #ffffff;
+  padding: 0.9rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.place-order-btn:hover {
+  background: #3f2101;
+  transform: translateY(-2px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out;
+}
+
+/* Ensure the container doesn't overflow */
+.max-w-6xl.mx-auto {
+  width: 100%;
+  max-width: 1280px; /* Tailwind's max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Handle overflow for smaller screens */
+@media (max-width: 896px) { /* Adjusted to account for 816px computed width + padding */
+  .max-w-6xl.mx-auto {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .md\:flex-row {
+    flex-direction: column !important; /* Force column layout on smaller screens */
+  }
+
+  .md\:w-2\/3,
+  .md\:w-1\/3 {
+    width: 100% !important; /* Ensure full width on smaller screens */
+  }
+
+  .gap-6 {
+    gap: 1rem; /* Reduce gap on smaller screens */
+  }
+
+  .checkout-container {
+    padding: 0.75rem; /* Further reduce padding for smaller screens */
+  }
+}
+
+@media (min-width: 897px) {
+  .max-w-6xl.mx-auto {
+    display: flex;
+    flex-direction: row;
+  }
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+}

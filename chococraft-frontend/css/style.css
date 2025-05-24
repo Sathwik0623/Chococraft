@@ -34,7 +34,7 @@ nav .search {
 }
 
 nav .search input {
-  padding: 0.6rem 0.10rem;
+  padding: 0.6rem 2.9rem;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -104,9 +104,108 @@ nav .menu a:hover::after {
 .back-btn.active {
   display: block;
 }
-
 /* --- Login Content --- */
-.login-content, .signup-content {
+.login-content {
+  max-width: 600px; /* Increased from 400px to make the container larger */
+  margin: 2rem auto;
+  padding: 40px; /* Increased padding for more internal space */
+  background: linear-gradient(135deg, #ffffff 0%, #fff0e6 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d9b38c;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-content h2 {
+  text-align: center;
+  margin-bottom: 25px; /* Slightly increased for better spacing */
+  color: #4b2e2e;
+  font-size: 2rem; /* Slightly larger for better hierarchy */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-content h3 {
+  text-align: center;
+  margin-bottom: 25px; /* Slightly increased for better spacing */
+  color: #4b2e2e;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for better spacing between form elements */
+}
+
+.login-content label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px; /* Slightly increased for better spacing */
+  font-weight: bold;
+  color: #4b2e2e;
+  font-size: 1rem; /* Slightly larger for readability */
+}
+
+.login-content input {
+  width: 100%;
+  padding: 12px; /* Increased padding for more comfortable input fields */
+  margin-bottom: 15px; /* Increased for better spacing */
+  border: 2px solid #d9b38c;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  font-size: 1rem; /* Slightly larger for readability */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-content input:focus {
+  border-color: #b45f06;
+  box-shadow: 0 0 5px rgba(180, 95, 6, 0.3);
+}
+
+.login-content .btn {
+  background: #b45f06;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem; /* Slightly increased padding for a larger button */
+  margin-top: 20px; /* Increased for better spacing */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem; /* Slightly larger for better readability */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-content .btn:hover {
+  background: #5c2a0c;
+  transform: translateY(-2px);
+}
+
+.login-content p {
+  margin-top: 20px; /* Increased for better spacing */
+  font-size: 0.95rem; /* Slightly larger for readability */
+  text-align: center;
+  color: #5c2a0c;
+}
+
+.login-content a {
+  color: #b45f06;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-content a:hover {
+  text-decoration: underline;
+  color: #8b4a24;
+}
+
+/* --- Signup Content (Unchanged) --- */
+.signup-content {
   max-width: 400px;
   margin: 2rem auto;
   padding: 25px;
@@ -118,7 +217,7 @@ nav .menu a:hover::after {
   overflow: hidden;
 }
 
-.login-content h2, .signup-content h2 {
+.signup-content h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #4b2e2e;
@@ -127,22 +226,13 @@ nav .menu a:hover::after {
   letter-spacing: 1px;
 }
 
-.login-content h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #4b2e2e;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.login-content form, .signup-content form {
+.signup-content form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.login-content label, .signup-content label {
+.signup-content label {
   display: block;
   text-align: left;
   margin-bottom: 5px;
@@ -151,7 +241,7 @@ nav .menu a:hover::after {
   font-size: 0.95rem;
 }
 
-.login-content input, .signup-content input {
+.signup-content input {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -163,12 +253,12 @@ nav .menu a:hover::after {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.login-content input:focus, .signup-content input:focus {
+.signup-content input:focus {
   border-color: #b45f06;
   box-shadow: 0 0 5px rgba(180, 95, 6, 0.3);
 }
 
-.login-content .btn, .signup-content .btn {
+.signup-content .btn {
   background: #b45f06;
   color: #fff;
   border: none;
@@ -182,29 +272,62 @@ nav .menu a:hover::after {
   transition: background 0.3s, transform 0.2s;
 }
 
-.login-content .btn:hover, .signup-content .btn:hover {
+.signup-content .btn:hover {
   background: #5c2a0c;
   transform: translateY(-2px);
 }
 
-.login-content p, .signup-content p {
+.signup-content p {
   margin-top: 15px;
   font-size: 0.9rem;
   text-align: center;
   color: #5c2a0c;
 }
 
-.login-content a, .signup-content a {
+.signup-content a {
   color: #b45f06;
   text-decoration: none;
   font-weight: bold;
 }
 
-.login-content a:hover, .signup-content a:hover {
+.signup-content a:hover {
   text-decoration: underline;
   color: #8b4a24;
 }
 
+/* Responsive Adjustments for Login Container */
+@media (max-width: 768px) {
+  .login-content {
+    max-width: 100%; /* Allow it to stretch on smaller screens */
+    padding: 30px;
+  }
+
+  .login-content h2,
+  .login-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .login-content input,
+  .login-content .btn {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-content {
+    padding: 20px;
+  }
+
+  .login-content h2,
+  .login-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .login-content input,
+  .login-content .btn {
+    font-size: 0.9rem;
+  }
+}
 /* --- Header --- */
 header {
   text-align: center;
@@ -762,7 +885,7 @@ main {
 
 /* --- Footer --- */
 footer {
-  background: #4b2e2e;
+  background: #472f2f;
   color: #fff;
   text-align: center;
   padding: 2rem 1rem;
@@ -1118,7 +1241,7 @@ footer .socials a:hover i {
 }
 
 .signup-content .success-message::before {
-  content: '✓';
+  /* content: '✓'; */
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -1233,7 +1356,7 @@ nav .search {
 }
 
 nav .search input {
-  padding: 0.6rem 0.10rem;
+  padding: 0.6rem 2.9rem;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -1306,7 +1429,7 @@ nav .menu a:hover::after {
 
 /* --- Login Content --- */
 .login-content, .signup-content {
-  max-width: 400px;
+  max-width: 600px;
   margin: 2rem auto;
   padding: 25px;
   background: linear-gradient(135deg, #ffffff 0%, #fff0e6 100%);
@@ -1961,7 +2084,7 @@ main {
 
 /* --- Footer --- */
 footer {
-  background: #4b2e2e;
+  background: #472f2f;
   color: #fff;
   text-align: center;
   padding: 2rem 1rem;
@@ -3147,7 +3270,7 @@ main {
   transition: opacity 0.5s ease;
 }
 .success-message::before {
-  content: '✓';
+  /* content: '✓'; */
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -3188,7 +3311,7 @@ main {
 }
 
 .cart-success::before {
-  content: '✓';
+  /* content: '✓'; */
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -3224,7 +3347,7 @@ main {
 }
 
 .fav-success::before {
-  content: '✓';
+  /* content: '✓'; */
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -3263,7 +3386,7 @@ main {
 }
 
 .signup-content .signup-success::before {
-  content: '✓';
+  /* content: '✓'; */
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -3302,6 +3425,7 @@ main {
 .favorites-list {
   display: grid;
   gap: 1rem;
+  flex-grow: 1;
 }
 
 .favorite-item {
@@ -3560,4 +3684,267 @@ main {
 
 .reject-btn:hover {
   background-color: #c82333;
+}
+.h-10 {
+  height: 40px;
+}
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background: #fff9f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Navbar --- */
+nav {
+  display: flex;
+  align-items: center;
+  background: #4b2e2e;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+nav .logo {
+  margin-right: 1rem;
+}
+
+nav .search {
+  margin-right: 1rem;
+}
+
+nav .search input {
+  padding: 0.6rem 2.9rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
+}
+
+nav .menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav .menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  position: relative;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+nav .menu a:hover {
+  color: #f4a300;
+  transform: scale(1.1);
+}
+
+nav .menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  background: #f4a300;
+  transition: width 0.3s;
+}
+
+nav .menu a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Back Button */
+.back-btn {
+  display: none;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.back-btn.active {
+  display: block;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    position: relative;
+  }
+
+  nav .logo {
+    margin-bottom: 0.5rem;
+  }
+
+  nav .search {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  nav .search input {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem 2.9rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav .menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #4b2e2e;
+    padding: 0.5rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+
+  nav .menu.active {
+    display: flex;
+  }
+
+  nav .menu a {
+    width: 100%;
+    text-align: center;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .back-btn {
+    display: none;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: #5c2a0c;
+    border-radius: 5px;
+    margin: 0.5rem;
+  }
+
+  .back-btn.active {
+    display: block;
+  }
+}
+
+/* Rest of the existing styles remain unchanged */
+/* .login-content, .signup-content {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #ffffff 0%, #fff0e6 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d9b38c;
+  position: relative;
+  overflow: hidden;
+} */
+
+/* Add remaining styles as needed */
+.notification-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #333;
+}
+
+.notification-header {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.notification-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #4b2e2e;
+}
+
+.notification-empty {
+  padding: 10px;
+  text-align: center;
+  color: #888;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.notification-item.unread {
+  background-color: #e6f3ff;
+}
+
+.notification-item.read {
+  background-color: #f9f9f9;
+}
+
+.notification-item:hover {
+  background-color: #f0f0f0;
+}
+
+.notification-item strong {
+  display: block;
+  font-size: 14px;
+  color: #4b2e2e;
+}
+
+.notification-item p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.notification-item small {
+  font-size: 12px;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .notification-dropdown {
+    width: 100%;
+    right: 10px;
+  }
 }

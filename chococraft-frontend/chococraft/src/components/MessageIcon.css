@@ -1,0 +1,98 @@
+.message-icon-container {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+z-index: 1001;
+pointer-events: auto;
+}
+
+.message-icon {
+  cursor: pointer;
+  position: relative;
+  color: #333;
+}
+
+.message-icon:hover {
+  color: #007bff;
+}
+
+.unread-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.message-dropdown {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  
+z-index: 1001;
+}
+
+.message-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.message-item:last-child {
+  border-bottom: none;
+}
+
+.message-item.unread {
+  background-color: #e6f3ff;
+  font-weight: 500;
+}
+
+.message-item.read {
+  background-color: #f9f9f9;
+}
+
+.message-item:hover {
+  background-color: #f1f1f1;
+}
+
+.message-item strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.message-item p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.message-item small {
+  display: block;
+  font-size: 12px;
+  color: #888;
+}
+
+.error {
+  color: #dc3545;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.no-messages {
+  padding: 12px;
+  font-size: 13px;
+  color: #666;
+}
