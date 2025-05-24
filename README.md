@@ -58,7 +58,9 @@ http://localhost:3000
 
 
 
-Folder Structure
+## Folder Structure
+
+
 Chococraft/
 ├── chococraft-backend/   # Backend source code (Node.js + Express)
 ├── chococraft-frontend/  # Frontend source code (React)
