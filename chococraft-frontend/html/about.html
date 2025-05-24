@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ChocoCraft</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="40">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search Chocolates…" />
+    </div>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="favorites.html" style="color: #fff;">❤️ Favorites</a>
+      <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="orders.html">My Orders</a>
+      <a href="login.html" id="logoutLink">Login/Signup</a>
+      <!-- <a href="admin.html">Admin</a> -->
+    </div>
+    <a href="#" class="back-btn" onclick="history.back(); return false;">Back</a>
+  </nav>
+
+  <header>
+    <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="80">
+    <h1>About ChocoCraft</h1>
+    <h2>Our Story and Mission</h2>
+  </header>
+
+  <main>
+    <div class="about-content">
+      <h3>About Us</h3>
+      <p id="about-us-text">Loading...</p>
+    </div>
+  </main>
+
+  <footer>
+    <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="40">
+    <p>© 2025 ChocoCraft. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+  <script>
+    async function fetchAboutUsText() {
+      try {
+        const response = await fetch('http://localhost:3000/about-us', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+        }
+        const data = await response.json();
+        console.log('Fetched About Us data:', data);
+        return data.text || 'No About Us content set.';
+      } catch (e) {
+        console.error('Error fetching About Us text:', e.message);
+        if (e.message.includes('Failed to fetch')) {
+          console.error('Possible causes: Server not running, wrong port, or CORS issue. Check if http://localhost:3000 is accessible.');
+        } else if (e.message.includes('HTTP error')) {
+          console.error('Check if /about-us endpoint is implemented on the server.');
+        }
+        return `Error loading About Us content. Details: ${e.message}. Check console for more info.`;
+      }
+    }
+
+    async function displayAboutUsContent() {
+      const aboutUsText = await fetchAboutUsText();
+      const aboutUsElement = document.getElementById('about-us-text');
+      if (aboutUsElement) {
+        aboutUsElement.textContent = aboutUsText;
+      }
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const cartCount = cart.reduce((total, item) => total + (item.quantity || 0), 0);
+      const cartCountElements = document.querySelectorAll('#cart-count');
+      cartCountElements.forEach(element => {
+        element.textContent = cartCount;
+      });
+    }
+
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+      const backBtn = document.querySelector('.back-btn');
+
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        backBtn.classList.remove('active');
+      });
+
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.history.length > 1) {
+            backBtn.classList.add('active');
+          }
+          menu.classList.remove('active');
+        });
+      });
+
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.history.length > 1) {
+          history.back();
+        } else {
+          menu.classList.remove('active');
+          backBtn.classList.remove('active');
+        }
+      });
+
+      console.log('About page loaded, setting up content...');
+      displayAboutUsContent();
+      updateCartCount();
+    });
+  </script>
+</body>
+</html>

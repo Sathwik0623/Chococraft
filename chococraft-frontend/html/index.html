@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChocoCraft - Home</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="40">
+    </div>
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search Chocolates…" />
+    </div>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="favorites.html" style="color: #fff;">❤️ Favorites</a>
+      <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="login.html" id="logoutLink">Login/Signup</a>
+    </div>
+  </nav>
+
+  <header>
+    <div id="banner-section">
+      <div class="banner-slideshow">
+        <div class="banner-container" id="banner-container"></div>
+        <button class="banner-nav prev" id="prev-banner">❮</button>
+        <button class="banner-nav next" id="next-banner">❯</button>
+      </div>
+      <div id="welcome-section" style="display: none;">
+        <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="80">
+        <h1>Welcome to ChocoCraft</h1>
+        <h2>Indulge in Sweet Bliss</h2>
+      </div>
+    </div>
+    <div id="update-bar"></div>
+  </header>
+
+  <main>
+    <h2>Our Chocolates</h2>
+    <div id="product-list" class="product-grid"></div>
+    <div id="successMessage" class="success-message"></div>
+    <div id="favoriteMessage" class="success-message"></div>
+    <div id="favoritesMessage" class="favorites-message"></div>
+    <div id="loginMessage" class="login-message"></div>
+  </main>
+
+  <footer>
+    <img src="../assets/images/logo.png" alt="ChocoCraft Logo" height="40">
+    <p>© 2025 ChocoCraft. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>
