@@ -28,6 +28,7 @@ Version Control:Git & GitHub
 
 
 ### Installation
+
 1. Clone the repository
  	git clone https://github.com/Sathwik0623/Chococraft.git
  	cd Chococraft
